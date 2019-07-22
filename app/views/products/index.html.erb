@@ -2,20 +2,20 @@
 
 <h1>Products</h1>
 <%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :name, "Name Contains" %>
-    <%= f.text_field :name_cont %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price, "Price between" %>
-    <%= f.text_field :price_gteq %>
-    <%= f.label :price, "and" %>
-    <%= f.text_field :price_gteq %>
-  </div>
-
+  <%= f.condition_fields do |c| %>
+    <div class="field">
+      <%= c.attribute_fields do |a| %>  
+        <%= a.attribute_select assocation: [:categories] %>
+      <% end %>
+      <%= c.predicate_select %>
+        <%= c.value_fields do |v| %>
+          <%= v.text_field :value %>
+        <% end %>
+    </div>
+  <% end %>
   <div class="action"><%= f.submit "Search"%></div>
 <% end %>
+
 <table>
   <thead>
     <tr>
