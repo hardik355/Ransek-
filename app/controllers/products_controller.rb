@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
   def index
     @search = Product.search(params[:q])
     @products = @search.result
-    @search.build_condition if @search.sorts.empty?
-    @search.build_sort if @search.sorts.empty?
+    # @search.build_condition if @search.sorts.empty?
+    # @search.build_sort if @search.sorts.empty?
   end
 
   # GET /products/1

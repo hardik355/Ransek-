@@ -1,17 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-<%= search_form_for @search, url: search_products_path, method: :post do |f| %>
-  <%= f.condition_fields do |c| %>
-    <%= render "condition_field", f: c %>
-  <% end %>
-  <p><%#= link_to_add_fields "Add Conditions", f, :condition %></p>
+
+<%= search_form_for @search do |f| %>
+  
+  <div class="field">
+    <%= f.label :name, "Name Contains" %>
+    <%= f.text_field :name_cont %>
+  </div><br>
+  
+  <div class="field">
+    <%= f.label :price, "Price between" %>
+    <%= f.text_field :price_gteq %>
+    <%= f.label :price, "and" %>
+    <%= f.text_field :price_lteq %>
+  </div><br>
+
   <div class="field">
     Sort:
       <%= f.sort_fields do |s| %>
         <%= s.sort_select %>
       <% end %>
   </div>
+  
   <div class="action"><%= f.submit "Search"%></div>
 <% end %>
 
