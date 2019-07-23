@@ -1,0 +1,13 @@
+<h1>Task Dog</h1>
+
+<%= link_to "New Task", new_task_path, id: "new_link", remote: true %>
+
+<h3>Incomplete Tasks</h3>
+<div class="tasks" id="incomplete_tasks">
+   <%#= task.name %>
+</div>
+
+<h2>Complete Tasks</h2>
+<div class="tasks" id="complete_tasks">
+  <%#= render @complete_tasks %>
+</div>
