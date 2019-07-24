@@ -1,4 +1,16 @@
-<%= form_for @task, remote: true do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+<%= form_for @task, remote: true do |form| %>
+    
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :complete %>
+    <%= form.check_box :complete %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
