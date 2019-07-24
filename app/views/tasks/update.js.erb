@@ -1,3 +1,3 @@
-<%= @task.complete? %>
-$('edit_task_<%= @task.id %>'); 
+$('#task_<%= @task.id %>').html("<%= j render (@task) %>");
 
+$('#dynamic_div').html("");

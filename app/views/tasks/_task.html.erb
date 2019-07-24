@@ -1,7 +1,6 @@
-<tr id="task_<%= task.id %>">
-  <td><%= task.name %></td>
-  <td><%= task.complete %></td>
-  <td><%= link_to 'Show', task %></td>
-  <td><%= link_to 'Edit', edit_task_path(task)%></td>
-  <td><%= link_to 'Destroy', task, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
+    <td><%= task.name %></td>
+    <td><%= task.complete %></td>
+    <td><%= link_to 'Show', task %></td>
+    <div id="edit_link"><td><%= link_to 'Edit', edit_task_path(task), remote: true %></td></div>
+    <td><%= link_to 'Destroy', task, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
