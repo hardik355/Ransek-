@@ -23,7 +23,7 @@
           <td><%= task.complete %></td>
           <td><%= link_to 'Show', task %></td>
           <div id="edit_link"><td><%= link_to 'Edit', edit_task_path(task), remote: true %></td></div>
-          <td><%= link_to 'Destroy', task, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <div id="show_link"><td><%= link_to 'Destroy', task, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td></div>
         </tr>
       <% end %>
       </tbody>
